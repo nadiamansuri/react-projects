@@ -1,17 +1,19 @@
-import React, { useContext } from 'react'
-import { FaBars } from 'react-icons/fa'
-import {AppContext, useGlobalContext} from './context'
+import React from 'react';
+import { FaBars } from 'react-icons/fa';
+import { useGlobalContext } from './context';
 
 const Home = () => {
-  const data = useGlobalContext();
+  const { openSidebar, openModal } = useGlobalContext();
   return (
     <main>
-      <button className='sidebar-toggle'>
-        <FaBars/>
+      <button onClick={openSidebar} className='sidebar-toggle'>
+        <FaBars />
       </button>
-      <button className='btn'>show modal</button>
+      <button onClick={openModal} className='btn'>
+        show modal
+      </button>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
